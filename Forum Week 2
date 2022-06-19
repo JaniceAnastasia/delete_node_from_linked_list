@@ -1,0 +1,54 @@
+//Forum week 2
+//12, 78, 53, 11, 72, 20, 99, 36, 13, 48, 23, 71, 15
+// buat program untuk menghapus angka 11 dengan menggunakan konsep delete node from linked list
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node{
+  int data;
+  struct Node* next;
+};
+struct Node*head
+void Insert (int data);
+void print();
+void delete(int n);
+int main()
+{
+  head = null;
+  Insert (12);
+  Insert (78);
+  Insert (53);
+  Insert (11);
+  Insert (72);
+  Insert (20);
+  Insert (99);
+  Insert (36);
+  Insert (13);
+  Insert (48);
+  Insert (23);
+  Insert (71);
+  Insert (15);
+  Print();
+  int n;
+  printf("Enter a position\n");
+  scanf("%d", &n);
+  Delete(n);
+}
+
+//Delete node at position n
+void Delete (int n)
+{
+  struct Node* temp1 = head;
+  if (n==1){
+    head = temp1-> next;
+    free(temp1);
+  }
+  int i;
+  for (i = 0;i<n-2;i++)
+    temp1 = temp1->next;
+  struct Node* temp2 = temp1-> next;
+  temp1-> next = temp2-> next;
+  free(temp2);
+  return 0;
+}
