@@ -1,0 +1,57 @@
+//Forum Week 2
+//99, 13, 43, 72, 68, 33, 92, 9, 30, 51, 2, 37, 82, 40, 17, 12, 47
+//buat program dengan bahasa C untuk menginsert angka lima ratus tiga (503) diantara angka sembilan puluh dua (92) dan angka sembilan (9) dengan menggunakan konsep insert new code in linked list
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+  int data;
+  struct Node* next;
+}
+struct Node* head;
+void Print();{
+  Node* temp = head;
+  while(temp != null){
+    printf("%d", temp->data);
+    temp = temp->next;
+  }
+  printf("\n");
+void Insert(int data, int n);
+{
+  Node* temp1 = new Node();
+  temp1-> data = data;
+  temp-> next = null;
+  if(n==1){
+    temp1-> next = head;
+    head = temp1;
+  }
+  Node* temp2 = head;
+  for(int i=0;i<n-2;i++){
+    temp2 = temp2-> next;
+  }
+  temp1-> next = temp2-> next;
+  temp2-> next = temp1-> next;
+}
+int main(){
+  head = null;
+  Insert (99);
+  Insert (13);
+  Insert (43);
+  Insert (72);
+  Insert (68);
+  Insert (33);
+  Insert (92);
+  Insert (9);
+  Insert (30);
+  Insert (51);
+  Insert (2);
+  Insert (37);
+  Insert (82);
+  Insert (40);
+  Insert (17);
+  Insert (12);
+  Insert (47);
+  Print();
+  return 0;
+}
